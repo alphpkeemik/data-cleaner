@@ -66,7 +66,7 @@ class DataCleaner
         $item = current($raw);
         $class = get_class($item);
         $em = $this->doctrine->getManagerForClass($class);
-        $n = $this->normalizer->normalize($item, null, [
+        $n = $this->normalizer->normalize($item, '', [
             ObjectNormalizer::class => $item
         ]);
         $em->remove($item);

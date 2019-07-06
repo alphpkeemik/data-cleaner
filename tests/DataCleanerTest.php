@@ -81,7 +81,7 @@ class DataCleanerTest extends TestCase
             ->method('normalize')
             ->with(
                 $object,
-                null,
+                '',
                 [
                     ObjectNormalizer::class => $object
                 ]
