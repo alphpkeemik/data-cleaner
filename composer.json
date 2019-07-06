@@ -1,0 +1,13 @@
+{
+    "name": "ambientia/data-cleaner",
+    "description": "Purges old data from database",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mati Andreas",
+            "email": "mati.andreas@ambientia.ee"
+        }
+    ],
+    "license": "proprietary",
+    "require": {}
+}
