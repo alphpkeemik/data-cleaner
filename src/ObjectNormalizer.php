@@ -1,4 +1,11 @@
-<?php
+<?php declare(strict_types=1);
+
+/*
+ * This file is part of the Ambientia DataCleaner package.
+ *
+ * (c) Ambientia Estonia OÜ
+ */
+
 namespace Ambientia\DataCleaner;
 
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer as SymfonyObjectNormalizer;
@@ -9,7 +16,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer as SymfonyObjectNor
  */
 class ObjectNormalizer extends SymfonyObjectNormalizer
 {
-    protected function isAllowedAttribute($classOrObject, $attribute, $format = null, array $context = array())
+    protected function isAllowedAttribute($classOrObject, $attribute, $format = null, array $context = [])
     {
 
         if (!key_exists(__CLASS__, $context)) {
