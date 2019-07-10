@@ -20,6 +20,7 @@
         }
     },
     "require": {
+        "php" : "7.2.*",
         "symfony/serializer-pack": "^1.0",
         "doctrine/orm": "^2.6"
     },
