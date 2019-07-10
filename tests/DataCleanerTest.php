@@ -12,10 +12,10 @@ namespace Ambientia\DataCleaner\Tests;
 use Ambientia\DataCleaner\DataCleaner;
 use Ambientia\DataCleaner\ObjectNormalizer;
 use Ambientia\DataCleaner\QueryProviderInterface;
+use ArrayIterator;
 use ArrayObject;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\AbstractQuery;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use stdClass;
@@ -173,18 +173,10 @@ class DataCleanerTest extends TestCase
         if (!$object) {
             $object = new stdClass();
         }
-        $query = $this->createConfiguredMock(
-            AbstractQuery::class,
-            [
-                'iterate' => [
-                    [$object]
-                ]
-            ]
-        );
         $provider = $this->createConfiguredMock(
             QueryProviderInterface::class,
             [
-                'getQuery' => $query
+                'getItems' => new ArrayIterator([$object])
             ]
         );
 

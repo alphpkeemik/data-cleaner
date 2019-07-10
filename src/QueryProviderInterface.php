@@ -8,13 +8,13 @@
 
 namespace Ambientia\DataCleaner;
 
-use Doctrine\ORM\AbstractQuery;
+use Traversable;
 
 /**
  * @author mati.andreas@ambientia.ee
  */
 interface QueryProviderInterface
 {
-    public function getQuery(): AbstractQuery;
+    public function getItems(): Traversable;
 
 }

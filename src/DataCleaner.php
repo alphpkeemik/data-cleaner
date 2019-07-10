@@ -55,15 +55,14 @@ class DataCleaner
 
     private function processProvider(QueryProviderInterface $provider): void
     {
-        $query = $provider->getQuery();
-        foreach ($query->iterate() as $raw) {
+
+        foreach ($provider->getItems() as $raw) {
             $this->processItem($raw);
         }
     }
 
-    private function processItem(array $raw): void
+    private function processItem($item): void
     {
-        $item = current($raw);
         $class = get_class($item);
         $em = $this->doctrine->getManagerForClass($class);
         $n = $this->normalizer->normalize($item, '', [
