@@ -15,7 +15,11 @@ services:
 
    Ambientia\DataCleaner\DataCleaner:
         # inject all services tagged with app.handler as first argument
-        arguments: [!tagged ambientia.data_cleaner_provider]
+        arguments:
+            - '@doctrine'
+            - '@serializer'
+            - !tagged ambientia.data_cleaner_provider
+            - '@logger'
         tags:
             - { name: monolog.logger, channel: data-cleaner}
             
