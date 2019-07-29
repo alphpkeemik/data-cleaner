@@ -2,39 +2,6 @@
 
 PHP library for Purging old data from database
 
-## Configuring in Symfony
-Minimal configuration in Symfony 4:
-```
-services:
-    # this config only applies to the services created by this file
-    _instanceof:
-        # services whose classes are instances of CustomInterface will be tagged automatically
-        Ambientia\DataCleaner\QueryProviderInterface:
-            tags: ['ambientia.data_cleaner_provider']
-
-
-   Ambientia\DataCleaner\DataCleaner:
-        # inject all services tagged with app.handler as first argument
-        arguments:
-            - '@doctrine'
-            - '@serializer'
-            - !tagged ambientia.data_cleaner_provider
-            - '@logger'
-        tags:
-            - { name: monolog.logger, channel: data-cleaner}
-            
-   Ambientia\DataCleaner\DataCleanerCommand:
-        tags: ['console.command']
-
-monolog:
-    handlers:
-        data-cleaner:
-            type:  rotating_file
-            path:  "%kernel.logs_dir%/data-cleaner.log"
-            channels: data-cleaner       
-        
-```        
-Read more from https://symfony.com/doc/current/service_container/tags.html
 ## Creating provider
 ```
 <?php
@@ -69,6 +36,8 @@ class DataCleanerQueryProvider implements QueryProviderInterface
     }
 }
 ```
+## Add cron
+` * * * * * ambientia:data-cleaner >> /path/to/log/file 2>&1`
 
 ## Running code fixer
 
