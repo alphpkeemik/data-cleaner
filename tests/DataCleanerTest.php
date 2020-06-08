@@ -2,8 +2,6 @@
 
 /*
  * This file is part of the Ambientia DataCleaner package.
- *
- * (c) Ambientia Estonia OÜ
  */
 
 namespace Ambientia\DataCleaner\Tests;
@@ -14,8 +12,8 @@ use Ambientia\DataCleaner\ObjectNormalizer;
 use Ambientia\DataCleaner\QueryProviderInterface;
 use ArrayIterator;
 use ArrayObject;
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use stdClass;

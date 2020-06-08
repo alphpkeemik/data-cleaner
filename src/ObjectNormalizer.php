@@ -2,8 +2,6 @@
 
 /*
  * This file is part of the Ambientia DataCleaner package.
- *
- * (c) Ambientia Estonia OÜ
  */
 
 namespace Ambientia\DataCleaner;

@@ -2,8 +2,6 @@
 
 /*
  * This file is part of the Ambientia DataCleaner package.
- *
- * (c) Ambientia Estonia OÜ
  */
 
 namespace Ambientia\DataCleaner;
@@ -41,5 +39,6 @@ class DataCleanerCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->dataCleaner->execute();
+        return 0;
     }
 }

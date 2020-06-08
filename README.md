@@ -9,7 +9,7 @@ namespace App\Module;
 
 use Ambientia\DataCleaner\QueryProviderInterface;
 use DateTime;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Traversable;
 
 class DataCleanerQueryProvider implements QueryProviderInterface

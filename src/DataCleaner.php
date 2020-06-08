@@ -2,13 +2,11 @@
 
 /*
  * This file is part of the Ambientia DataCleaner package.
- *
- * (c) Ambientia Estonia OÜ
  */
 
 namespace Ambientia\DataCleaner;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
