@@ -37,16 +37,22 @@ class DataCleanerQueryProvider implements QueryProviderInterface
 }
 ```
 ## Add cron
-` * * * * * ambientia:data-cleaner >> /path/to/log/file 2>&1`
+` * * * * * ambientia:data-cleaner`
 
-## Running code fixer
+## developing
+
+Run docker `docker-composer up -d`
+
+Bash to container `docker/bash.sh`
+
+### Running code fixer
 
 Run php cs fixer `./vendor/bin/php-cs-fixer fix`
 
-## Running the tests
+### Running the tests
 
 Run tests with phpunit `./vendor/bin/phpunit`
 
-## Running analyzer
+### Running analyzer
 
 Run phan `./vendor/bin/phan`

@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  data-cleaner:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: ambientia-data-cleaner
+    volumes:
+      - ./:/var/www/html
